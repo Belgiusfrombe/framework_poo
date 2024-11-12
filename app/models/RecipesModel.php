@@ -17,4 +17,18 @@ abstract class recipesModel
             LIMIT 10;";
         return $connexion->query($sql)->fetchAll(PDO::FETCH_CLASS, Recipe::class);
     }
+
+    public static function findOneById(PDO $connexion, int $id): object
+    {
+        $sql = "SELECT *
+            FROM recipes
+            WHERE id = :id;";
+
+        $rs = $connexion->prepare($sql);
+        $rs->bindValue(':id', $id, PDO::PARAM_INT);
+        $rs->execute();
+
+        return $rs->fetch(PDO::FETCH_CLASS, Recipe::class);
+    }
+
 }

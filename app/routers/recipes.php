@@ -5,9 +5,7 @@ use \App\Controllers\RecipesController;
 include_once '../app/controllers/recipesController.php';
 
 switch ($_GET['recipes']):
-    case 'recipes':
-        RecipesController\showAction($connexion, $_GET['id']);
-        break;
-    default:
-        RecipesController\indexAction($connexion);
+    case 'show':
+        \App\Controllers\RecipesController::showAction($connexion, $_GET['id']);
+    break;
 endswitch;

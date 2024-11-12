@@ -16,4 +16,15 @@ abstract class RecipesController
         include '../app/views/recipes/index.php';
         $content = ob_get_clean();
     }
+
+    public static function showAction(PDO $connexion, int $id)
+    {
+        $recipe = \App\Models\RecipesModel::findOneById($connexion, $id);
+
+        global $content, $title;
+        $title = $recipe->name;
+        ob_start();
+        include '../app/views/recipes/show.php';
+        $content = ob_get_clean();
+    }
 }

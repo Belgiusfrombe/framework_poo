@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Master -<?php echo $title; ?></title>
+    <base href="http://localhost/Fléron%202EMEBESWEB/framework%20serveur/framework_poo/public/">
 </head>
 
 

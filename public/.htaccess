@@ -5,6 +5,11 @@ RewriteEngine on
 # ROUTES
 #---------------------------------------------------
 
+# ROUTE DU DETAIL D'UN POST
+# PATTERN: /posts/id/test.html
+# URL: ?posts=show&id=$1
+RewriteRule ^recipes/([1-9][0-9]*)/[a-z0-9\-]+\.html$ index.php?recipes=show&id=$1 [L]
+
 #--------------------------------------------------
 
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
