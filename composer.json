@@ -1,0 +1,18 @@
+{
+    "name": "armanoalexandre/framework_poo",
+    "description": "Project cursus",
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "app/controllers",
+            "App\\Models\\": "app/models",
+            "Core\\Classes\\": "core/classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "belgiusfrombe",
+            "email": "alexandrearmanocs@outlook.fr"
+        }
+    ],
+    "require": {}
+}
