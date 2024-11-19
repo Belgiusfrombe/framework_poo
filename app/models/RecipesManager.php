@@ -4,7 +4,7 @@ namespace App\Models;
 
 use \PDO , \Core\DB;
 
-abstract class recipesModel
+abstract class recipesManager
 {
     public static function findAll(): array
     {

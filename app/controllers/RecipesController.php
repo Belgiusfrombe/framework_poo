@@ -5,7 +5,7 @@ namespace App\Controllers;
 
 
 use \PDO;
-use \App\Models\RecipesModel;
+use \App\Models\RecipesManager;
 
 
 abstract class RecipesController
@@ -14,7 +14,7 @@ abstract class RecipesController
 
     public static function indexAction()
     {
-        $recipes = RecipesModel::findAll();
+        $recipes = RecipesManager::findAll();
 
 
         global $title, $content;
@@ -27,7 +27,7 @@ abstract class RecipesController
 
     public static function showAction(int $id)
     {
-        $recipe = RecipesModel::findOneById($id);
+        $recipe = RecipesManager::findOneById($id);
 
 
         global $title, $content;
