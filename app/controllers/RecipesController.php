@@ -1,16 +1,21 @@
 <?php
 
+
 namespace App\Controllers;
+
 
 use \PDO;
 use \App\Models\RecipesModel;
 
+
 abstract class RecipesController
 {
 
-    public static function indexAction(PDO $connexion)
+
+    public static function indexAction()
     {
-        $recipes = RecipesModel::findAll($connexion);
+        $recipes = RecipesModel::findAll();
+
 
         global $title, $content;
         $title = "All recipes";
@@ -19,9 +24,11 @@ abstract class RecipesController
         $content = ob_get_clean();
     }
 
-    public static function showAction(PDO $connexion, int $id)
+
+    public static function showAction(int $id)
     {
-        $recipe = RecipesModel::findOneById($connexion, $id);
+        $recipe = RecipesModel::findOneById($id);
+
 
         global $title, $content;
         $title = $recipe->name;

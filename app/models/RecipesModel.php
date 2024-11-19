@@ -2,28 +2,43 @@
 
 namespace App\Models;
 
-use \PDO;
+use \PDO , \Core\DB;
 
 abstract class recipesModel
 {
-    public static function findAll(PDO $connexion): array
+    public static function findAll(): array
     {
         $sql = "SELECT *
             FROM recipes
             ORDER BY created_at DESC
             LIMIT 10;";
-        return $connexion->query($sql)->fetchAll(PDO::FETCH_CLASS, Recipe::class);
+        return DB::getConnexion()->query($sql)->fetchAll(PDO::FETCH_CLASS, Recipe::class);
     }
 
-    public static function findOneById(PDO $connexion, int $id): object
+    public static function findOneById(int $id): object
     {
         $sql = "SELECT *
                 FROM recipes
                 WHERE id = :id;";
 
-        $rs = $connexion->prepare($sql);
+        $rs = DB::getConnexion()->prepare($sql);
         $rs->bindValue(":id", $id, PDO::PARAM_INT);
         $rs->execute();
         return $rs->fetchObject(Recipe::class);
     }
+
+    public  static function createOne(PDO $connexion, array $data): bool
+    {
+
+    }
+
+    public static function updateOneById(PDO $connexion, int $id, array $data): bool
+    {
+
+    }
+
+    public static function deleteOneById(PDO $connexion, int $id): bool {
+
+}
+
 }

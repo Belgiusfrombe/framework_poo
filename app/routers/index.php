@@ -8,6 +8,5 @@ else:
     // PATTERN: /
     // CTRL: RecipesController
     // ACTION: index
-
-    \App\Controllers\RecipesController::indexAction($connexion);
+    \App\Controllers\RecipesController::indexAction();
 endif;
