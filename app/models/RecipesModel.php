@@ -27,17 +27,17 @@ abstract class recipesModel
         return $rs->fetchObject(Recipe::class);
     }
 
-    public  static function createOne(PDO $connexion, array $data): bool
+    public  static function createOne(array $data): bool
     {
 
     }
 
-    public static function updateOneById(PDO $connexion, int $id, array $data): bool
+    public static function updateOneById(int $id, array $data): bool
     {
 
     }
 
-    public static function deleteOneById(PDO $connexion, int $id): bool {
+    public static function deleteOneById(int $id): bool {
 
 }
 
