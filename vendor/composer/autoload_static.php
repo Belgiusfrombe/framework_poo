@@ -4,12 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd164fc0fe83bee74b0850173c4dbd199
+class ComposerStaticInit61b297db981397bf950ac61c1609181e
 {
     public static $prefixLengthsPsr4 = array (
         'C' => 
         array (
-            'Core\\Classes\\' => 13,
+            'Core\\' => 5,
         ),
         'A' => 
         array (
@@ -19,9 +19,9 @@ class ComposerStaticInitd164fc0fe83bee74b0850173c4dbd199
     );
 
     public static $prefixDirsPsr4 = array (
-        'Core\\Classes\\' => 
+        'Core\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/core/classes',
+            0 => __DIR__ . '/../..' . '/core',
         ),
         'App\\Models\\' => 
         array (
@@ -34,15 +34,18 @@ class ComposerStaticInitd164fc0fe83bee74b0850173c4dbd199
     );
 
     public static $classMap = array (
+        'App\\Controllers\\RecipesController' => __DIR__ . '/../..' . '/app/controllers/RecipesController.php',
+        'App\\Models\\Recipe' => __DIR__ . '/../..' . '/app/models/Recipe.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Core\\Helpers' => __DIR__ . '/../..' . '/core/Helpers.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd164fc0fe83bee74b0850173c4dbd199::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd164fc0fe83bee74b0850173c4dbd199::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd164fc0fe83bee74b0850173c4dbd199::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit61b297db981397bf950ac61c1609181e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit61b297db981397bf950ac61c1609181e::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit61b297db981397bf950ac61c1609181e::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -1,11 +1,8 @@
 <?php
 
-
 namespace App\Models;
 
-
 use \PDO;
-
 
 abstract class recipesModel
 {
@@ -21,14 +18,12 @@ abstract class recipesModel
     public static function findOneById(PDO $connexion, int $id): object
     {
         $sql = "SELECT *
-            FROM recipes
-            WHERE id = :id;";
+                FROM recipes
+                WHERE id = :id;";
 
         $rs = $connexion->prepare($sql);
-        $rs->bindValue(':id', $id, PDO::PARAM_INT);
+        $rs->bindValue(":id", $id, PDO::PARAM_INT);
         $rs->execute();
-
-        return $rs->fetch(PDO::FETCH_CLASS, Recipe::class);
+        return $rs->fetchObject(Recipe::class);
     }
-
 }

@@ -1,11 +1,13 @@
 <?php
-// Méthodes 1
-if(isset($_GET['recipes'])):
+
+if (isset($_GET['recipes'])):
     require_once '../app/routers/recipes.php';
-    \App\Controllers\RecipesController::showAction($connexion);
-else :
-    // Route pas defaut: Liste des recipes
-    // Pattern: /
+
+else:
+    // ROUTE PAR DÉFAUT: liste des recipes
+    // PATTERN: /
     // CTRL: RecipesController
+    // ACTION: index
+
     \App\Controllers\RecipesController::indexAction($connexion);
 endif;
